@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>표</title>
+</head>
+<body>
+<!--   tr : table row
+       td : table data
+       colspan 컬럼값들을 합치기 
+       rowspan 로 값들을 합치기
+ -->
+ 
+ <table border="1">
+ 	<tr>
+ 		<td>1</td>
+ 		<td>2</td>
+ 		<td>3</td>
+ 	</tr>
+ 	<tr>
+ 		<td>4</td>
+ 		<td>5</td>
+ 		<td>6</td>
+ 	</tr>
+ </table>
+
+ <table border = "1">
+ <figcaption>표만들기</figcaption>
+	 <tr>
+	 	<td> 1행 1열 </td>
+	 	<td> 1행 2열 </td>
+	 	<td> 1행 3열 </td>
+	 	<td> 1행 4열 </td>
+	 </tr>
+	 <tr>
+	 	<td> 2행 1열 </td>
+	 	<td> 2행 2열 </td>
+	 	<td> 2행 3열 </td>
+	 	<td> 2행 4열 </td>
+	 </tr>
+	 <tr>
+	 	<td> 3행 1열 </td>
+	 	<td> 3행 2열 </td>
+	 	<td> 3행 3열 </td>
+	 	<td> 3행 4열 </td>
+	 </tr>
+ </table>
+ 
+ <table border = "1">
+ <caption>colspan 컬럼값들 합치기</caption>
+	 <tr>
+	 	<td colspan="2"> 1행 1열 </td>
+	 	<td> 1행 3열 </td>
+	 	<td> 1행 4열 </td>
+	 </tr>
+	 <tr>
+	 	<td colspan="3"> 2행 1열 </td>
+	 	<td> 2행 4열 </td>
+	 </tr>
+	 <tr>
+	 	<td colspan="4"> 3행 1열 </td>
+
+	 </tr>
+ </table>
+ 
+ <table border = "1">
+ <caption>rowspan (row값 합치기)</caption>
+	 <tr>
+	 	<td rowspan="2"> 1행 1열 </td>
+	 	<td> 1행 2열 </td>
+	 	<td> 1행 3열 </td>
+	 	<td rowspan="3"> 1행 4열 </td>
+	 </tr>
+	 <tr>
+	 	<td> 2행 2열 </td>
+	 	<td> 2행 3열 </td>
+	 	
+	 </tr>
+	 <tr>
+	 	<td> 3행 1열 </td>
+	 	<td> 3행 2열 </td>
+	 	<td> 3행 3열 </td>
+	 	
+	 </tr>
+ </table>
+ 
+
+</body>
+</html>
