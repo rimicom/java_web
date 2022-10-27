@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 색상과 배경 </title>
+<style>
+h1{color:blue;} /* 색상이름  표기 */
+h2{color:rgb(255,0,0,0.3);} /* R(빨)G(초)B(파)a(투명도0~1사이의 값) */
+h3{color:hsl(240,100%,50%,0.3);} /* 색상, 채도, 밝기, a(투명도0~1사이의 값) */
+h4{color:#FF0000;} /* hex, 16진수 RRGGBB */
+body{
+	background-image: url("./images/iu01.jpg");
+	background-repeat: no-repeat; /* no-repeat, repeat, repeat-x, repeat-y */ 
+	background-size : contain; /*auto, 100px 200px, 60% 40% , contain, cover */ 
+	                         /* auto : 원래 이미지 크기,
+	                           contain: 요소안에 배경이미지가 다 들어오도록 확대/ 축소
+	                           cover: 배경요소를 모두 덮도록 확대/ 축소 */
+	background-position: right top; /* 수평위치 수직위치 */ 
+	background-attachment: fixed; /* scroll, fixed */
+	
+	/* background: url("./images/iu01.jpg") no-repeat fixed;*/
+	                          
+}
+p{
+	background: orange;
+}
+span{
+	background-color:purple;
+}
+div{
+	width: 300px;
+	background-image :  radial-gradient(circle at 10% 10%, white, blue);
+	/*linear-gradient(to bottom, blue, white 30%, blue);
+	  radial-gradient(circle, white, yellow, red);
+	*/
+}
+
+
+</style>
+</head>
+<body>
+<h1>HTML</h1>
+<h2>HTML</h2>
+<h3>HTML</h3>
+<h4>HTML</h4>
+
+<p> 10월 31일은 <span>할로윈</span>입니다. </p>
+
+<div>
+강원도가 강원중도개발공사, GJC(이하 ‘중도공사’)가 레고랜드조성사업을 위해 진 빚 2,050억 원을 오는 12월 15일까지 전액 상환하겠다고 밝혔습니다.
+
+이는 강원도가 최근 밝혔던 채무 상환 일정보다 한 달 이상 앞당겨진 것입니다.
+
+강원도는 이번 조치가 김진태 강원도지사와 추경호 경제부총리가 금융시장 안정을 위해 직접 협의한 사항이라고 설명했습니다.
+
+이에 앞서, 중도공사가 대출을 위해 만든 특수목적법인, SPC인 ‘아이원제일차’가 춘천 중도 레고랜드발 조성사업을 위해 받은 대출 2,050억 원을 상환 약정일에 갚지 못하면서 아이원제일차가 부도 처리됐습니다.
+
+아이원제일차 부도 당시, 중도공사는 물론이고, 대출 보증을 섰던 강원도도 보증 채무를 지지 않았던 것으로 드러났습니다.
+
+이 같은 사실이 알려지자, 채권시장에서는 지방자치단체의 보증도 믿을 수 없다는 불안감이 퍼졌고, 이는 국내 금융시장 전반의 신용경색으로 이어졌습니다.
+
+
+</div>
+
+<a href="#">naver</a>
+
+
+
+</body>
+</html>

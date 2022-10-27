@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 레이아웃 </title>
+<style>
+.box1{
+	width: 200px; /* 고정너비 */
+	height: 100px;
+	background: orange;
+}
+.box2{
+	width: 50%; /* 가변 너비 - 브라우저 창 너비의 50% */
+	height: 100px;
+	background: blue;
+}
+h2{
+	/*display: inline;  블록 레벨 요소를 인라인으로 처리하겟다 */
+	
+}
+span{
+	display: block; /* 인라인 요소를 블록레벨로 처리 */ 
+	
+}
+
+a{
+	background: red;
+	width: 100px;
+	height: 300px; 
+	display: inline-block; /* 인라인 블록형태로 만들어줘서 높이 너비를 지정할 수 있다 */ 
+	border-width : 5px 10px 15px 20px; /* top - right - bottom - left */
+}
+div{
+	/* border-color : green; 
+	border-width : 3px;
+	border-style : solid;  dotted, dashed, double, groove, .. 
+	border : 3px solid green; 
+	*/
+
+	border-color : black;
+	/*border-width : 10px 1px;   위아래  좌우 */ 
+	border-width : 3px;
+	/*border-width :  5px 10px 15px 20px;  top - right - bottom - left (시계방향) */
+	border-style : solid;
+	border-radius : 20px;
+	
+
+}
+</style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<h2>HTML</h2>
+<h2>CSS</h2>
+<span>JAVA</span>
+<span>JSP</span>
+<a href="#">a-tag</a> 안녕하세요 
+</body>
+</html>

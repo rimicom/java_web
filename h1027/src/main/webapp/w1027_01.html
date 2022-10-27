@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>글꼴 폰트</title>
+<style>
+@font-face{
+	font-family: "bmin";
+	src: url("BMJUA_ttf.ttf") format("truetype");
+	font-weight: normal;
+	/*  url('trana.eot'),
+         url('trana.woff') format('woff'),
+         url('trana.ttf') format('truetype');  */
+}
+h2{
+	font-family: 'bmin', sans-serif, 굴림, 돋움;
+	font-size : 100px;
+	color : black;
+}
+.accent1{
+	font-weight: bold;
+	color: red;
+}
+.accent2{
+	font-weight: 100; /* 400 노말 */
+	font-style: italic;
+}
+.accent3{
+	font-weight: 900;
+	text-decoration: underline;
+	text-transform: uppercase;
+}
+h1{
+	text-align: center;
+}
+ul{
+	list-style-type: lower-alpha; /* disc, circle, square, none */
+}
+ol{
+	list-style-type: lower-alpha; 
+	list-style-position: inside;
+}
+.content{
+	text-indent: 15px; /* 들여쓰기 */
+	width : 300px;
+	white-space: nowrap; /* 줄바꾸기 없음 */
+	overflow: hidden;
+	text-overflow: ellipsis; /* clip: 자름 ellipsis: ...*/
+	
+}
+.content:hover{
+	overflow: visible;
+}
+</style>
+</head>
+<body>
+<h2>HTML 수업입니다 </h2>
+<h1> 세계 3대 미항</h1>
+<ul>
+	<li><span class="accent1">시드니</span>, <b>호주</b></li>
+	<li><span class="accent2">리우데자네이루</span>, 브라질</li>
+	<li><span class="accent3">나폴리(Naples)</span>, 이탈리아</li>
+</ul>
+<ol>
+	<li>아메리카노</li><li>카페라떼</li><li>에스프레소</li>
+</ol>
+
+<p class="content"> 이 회장 승진 안건은 사외이사인 김한조 이사회 의장이 발의했으며, 이사회 논의를 거쳐 의결했다. 이 부회장의 회장 승진은 이사회 동의를 받지 않아도 되지만 평소 이사회 중심의 경영을 중시해 온 만큼 이사회 동의 절차를 거친 것으로 보인다.</p>
+
+
+
+
+</body>
+</html>
