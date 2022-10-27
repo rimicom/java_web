@@ -96,6 +96,7 @@ public class J1027_01 {
 				
 				System.out.printf("%s\t%d\t%d\t%d\t%d\t%.2f",name[searchNo],score[searchNo][0], score[searchNo][1],score[searchNo][2],total[searchNo],avg[searchNo]);
 				System.out.println();
+				break;
 				
 				
 				
