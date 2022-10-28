@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Position </title>
+<style>
+.box1{ width:100px; height:100px; background-color:blue;}
+.box2{ 
+	width:100px; height:100px; background:red;
+	position: relative;
+	top: 20px; left:20px; 
+	/* 요소를 일반적인 문서의 흐름에 따라 배치. 상하좌우(오프셋위치)적용*/
+}
+.box3{ 
+	width:50px; height: 50px; background-color: green;
+	position: absolute; top: 20px;
+	/*  일반적인 문서의 흐름을 제거 
+	가장 가까운 상위요소에 상대적인 오프셋 적용  */
+}
+</style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2">
+	<div class="box3"> box3 </div>
+</div>
+
+
+</body>
+</html>

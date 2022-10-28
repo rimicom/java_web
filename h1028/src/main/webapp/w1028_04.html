@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>z-index</title>
+<style>
+div{ position: absolute;}
+.box1{width:100px; height:100px; background: red; 
+		top: 20px; left: 200px; z-index:1; }
+.box2{width:100px; height:100px; background: green; 
+		top: 50px; left: 260px; }
+.box3{width:100px; height:100px; background: blue; 
+		top: 80px; left: 230px; z-index:-1;}
+		
+/* z 값이 크면 값이 작은 요소보다 위에 쌓인다. 
+     값을 명시하지 않으면 0처럼 취급  */
+     		
+</style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+</body>
+</html>

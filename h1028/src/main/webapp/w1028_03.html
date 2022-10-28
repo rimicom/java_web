@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>position</title>
+<style>
+.box1{ width:100px; height:100px; background-color:tomato;
+	/*position:fixed; top:10px; left:10px;*/
+	/* 요소의 일반적인 문서 흐름을 제거하고, 지정된 위치에 고정 */
+	position:sticky; bottom:0px;
+	/* 요소의 일반적 문서 흐름에 따라 배치, 
+	스크롤 되는 가장 가까운 상위요소에 오프셋 적용 */
+	 }
+.box2{ width:100px; height:100px; background-color: blue;
+		visibility: hidden; }
+.box3{ width:100px; height:100px; background-color: red;
+		visibility: visible; }
+</style>
+</head>
+<body>
+<div class="box2"></div>
+<div class="box3"></div>
+<div>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br></div>
+<div class="box1"></div>
+<div>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br></div>
+
+
+</body>
+</html>
