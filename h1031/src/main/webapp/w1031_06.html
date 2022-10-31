@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>nth-child</title>
+<style>
+*{ text-align: center;}
+table { border: 1px solid black ;  border-collapse: collapse;
+		width: 200px; }
+tr, td {border: 1px solid black; }
+
+table tr:nth-child(4){background-color : gray; }
+table tr:nth-child(2n+1){background-color : lightgray; }
+table tr:nth-last-child(2){background: red;}
+.box1 p:nth-child(5){color: red;}
+/* nth-child(숫자){ }
+   nth-of-type(숫자){ } 	*/
+.box1 span:nth-of-type(2){color:blue; }
+.box1 p:first-child{color:green;}
+div p:only-child{color:yellow;}
+</style>
+</head>
+<body>
+<div class ="box1">
+	<p> 1. p-tag </p>
+	<span>2. span-tag</span>
+	<p> 3. p-tag </p>
+	<span>4. span-tag</span>
+	<p> 5. p-tag </p>
+</div>
+<div class="box2">
+	<p> 1. p tag2 </p>
+</div>
+
+<h2> 10 대 슈퍼푸드 </h2>
+<table>
+<tr><td>귀리</td></tr>
+<tr><td>블루베리</td></tr>
+<tr><td>녹차</td></tr>
+<tr><td>마늘</td></tr>
+<tr><td>토마토</td></tr>
+<tr><td>브로콜리</td></tr>
+<tr><td>아몬드</td></tr>
+<tr><td>적포도주</td></tr>
+<tr><td>시금치</td></tr>
+<tr><td>연어</td></tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+/* 입력할 수 없는 요소 스타일 지정 */
+input[type="text"]:disabled{ background-color: red;} 
+/* 입력할 수 있는 요소 스타일 지정 */
+input[type="text"]:enabled{ background-color: blue;}
+/* 라디오 박스나 체크 박스 선택되었을 때 스타일 지정 */  
+input:checked + label { color: green ;}
+
+</style>
+
+</head>
+<body>
+<label>이름</label><input type="text" value="홍길동" disabled> <br>
+<label>주소</label><input type="text"> <br>
+<br>
+<label>과목선택</label><br>
+<input type="radio" name="subject" id="id1" value="speaking">
+<label for="id1">회화</label>
+<input type="radio" name="subject" id="id2" value="grammer">
+<label for="id2">문법</label>
+<input type="radio" name="subject" id="id3" value="writing">
+<label for="id3">작문</label>
+
+
+</body>
+</html>

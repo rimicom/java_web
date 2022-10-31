@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>변형</title>
+<style>
+.mx:hover{ transform:translateX(50px); }
+.my:hover{ transform:translateY(10px); }
+.mxy:hover{ transform:translate(100px, 20px); }
+.sx:hover{transform:scaleX(0.7);}
+.sy:hover{transform:scaleY(1.5);}
+.sxy:hover{transform:scale(0.5);}
+.r:hover{transform:rotate(1.5,1.7,-30deg);}
+.rx:hover{transform:rotateX(45deg);}
+.ry:hover{transform:rotateY(10deg);}
+.rz:hover{transform:rotateZ(20deg);}
+.skx:hover{transform:skewX(30deg);}
+.sky:hover{transform:skewY(50deg);}
+.sk:hover{transform:skew(20deg, 50deg);}
+
+.ori_rot{transform: rotateZ(10deg);}
+.to1 .ori_rot{transform-origin: left top; } 
+/* 왼쪽 상단 모서리 중심으로 10도 회전시켜라  */
+.to2 .ori_rot{transform-origin: left bottom; } 
+/* 왼쪽 하단 모서리 중심으로 10도 회전시켜라  */
+.to3 .ori_rot{transform-origin: right top; }
+/* 오른쪽 상단 모서리 중심으로 -10도 회전시켜라  */
+.to4 .ori_rot{transform-origin: right bottom; } 
+/* 오른쪽 하단 모서리 중심으로 -10도 회전시켜라  */
+</style>
+</head>
+<body>
+<h1> translate </h1>
+<div class="origin"> 
+	<div class = "mx"><img src="./images/im2.png"></div>
+</div>
+<div class="origin"> 
+	<div class = "my"><img src="./images/im2.png"></div>
+</div>
+<div class="origin"> 
+	<div class = "mxy"><img src="./images/im2.png"></div>
+</div>
+<hr>
+<h1> Scale </h1>
+<div class="origin"> 
+	<div class = "sx"><img src="./images/im2.png"></div>
+</div>
+<div class="origin"> 
+	<div class = "sy"><img src="./images/im2.png"></div>
+</div>
+<div class="origin"> 
+	<div class = "sxy"><img src="./images/im2.png"></div>
+</div>
+
+<hr>
+<h1> Rotation  </h1>
+<div class="origin"> 
+	<div class = "r"><img src="./images/im2.png"></div>
+</div>
+<div class="origin"> 
+	<div class = "rx"><img src="./images/im2.png"></div>
+</div>
+<div class="origin"> 
+	<div class = "ry"><img src="./images/im2.png"></div>
+</div>
+<div class="origin"> 
+	<div class = "rz"><img src="./images/im2.png"></div>
+</div>
+<hr> 
+<h1> Skew </h1> <!--  각도만큼 왜곡시킨다  -->
+<div class="origin"> 
+	<div class = "skx"><img src="./images/im2.png"></div>
+</div>
+<div class="origin"> 
+	<div class = "sky"><img src="./images/im2.png"></div>
+</div>
+<div class="origin"> 
+	<div class = "sk"><img src="./images/im2.png"></div>
+</div>
+
+<hr>
+<h1> Transform - origin   </h1>
+<div class="origin"> 
+	<div class = "to1 "><img src="./images/im2.png" class="ori_rot"></div>
+</div>
+<div class="origin"> 
+	<div class = "to2"><img src="./images/im2.png" class="ori_rot"></div>
+</div>
+<div class="origin"> 
+	<div class = "to3"><img src="./images/im2.png" class="ori_rot"></div>
+</div>
+<div class="origin"> 
+	<div class = "to4"><img src="./images/im2.png" class="ori_rot" ></div>
+</div>
+
+
+
+
+
+</body>
+</html>
