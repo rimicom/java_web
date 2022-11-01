@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.boxA{ width: 60px; height: 60px; margin: 60px; background: red; 
+	 animation: rotate 1.5s infinite, background 2s infinite alternate; 
+}
+.box{width: 60px; height: 60px; margin: 60px; 
+	animation-duration: 3s; /* 애니메이션 실행시간 설정 . 기본: 0 */ 
+	animation-name: background;  /* 애니메이션 이름 설정 */
+	animation-direction : alternate; 
+	/* 애니메이션이 끈난 후 원래 위치로 돌아가거나 반대 방향으로 애니메이션을 실행하도록 지정 
+	normal: 애니메이션을 끝까지 실행하면 원래 있던 위치로 (기본값)
+	alternate:  애니메이션을 끝까지 실행하면 왓던 방향으로 되돌아가면서 애니메이션 실행 
+	  */
+	animation-iteration-count: infinite; /* 반복횟수지정> 숫자로, infinite는 무한 */
+	animation-timing-function: ease; 
+	
+	/* animation: background 3s infinite alternate; */
+	}
+@keyframes background{
+	from {background: red;}
+	50% {background: green;}
+	to {background: blue;}
+}
+.box1{ width:300px; height: 300px; background: green; border: 1px solid black;
+		animation-name: shape; animation-duration:3s;	}
+.box2{ width:300px; height: 300px; background: green; border: 1px solid black;
+		animation-name: rotate; animation-duration:3s;	}
+@keyframes shape{
+	from{border: 1px solid black; }
+	to{border: 1px solid black; border-radius: 50%; }
+}
+@keyframes rotate {
+	from{transform: rotate(0deg);}
+	to{transform: rotate(45deg);}	
+}
+</style>
+</head>
+<body>
+<div class="boxA"> </div>
+<div class="box"> </div>
+<div class="box1"></div>
+<div class="box2"></div>
+</body>
+</html>

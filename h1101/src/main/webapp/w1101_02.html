@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>애니메이션</title>
+<style>
+div{ width: 100px; height: 100px; background-color:blue; 
+	animation : change-bg 5s; 
+	/* animation-name: change-bg; animation-duration: 3s;	*/
+	}
+@keyframes change-bg{
+	from{
+		background-color: blue;
+		border: 1px solid black; 
+	}
+	to{
+		background-color: green;
+		border: 1px solid blue;
+		border-radius: 50%; 
+	}
+}
+</style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

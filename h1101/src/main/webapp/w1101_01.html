@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 트랜지션 </title>
+<style>
+div.box1{ background: orange; width: 100px; height: 50px; margin: 10px; 
+		 transition: background-color 1s; }
+div.box1:hover{background-color: yellow; }
+
+div.box2{ background: orange; width: 100px; height: 50px; margin: 10px; 
+		 transition: width 1s ; transition-delay: 1s; } 
+		 /*transition: width 1s height 3s ;  transition: all 2s;    */
+div.box2:hover{ width: 300px; }
+
+div.box3{ background: orange; width: 100px; height: 50px; margin: 10px; 
+		 transition: all 2s;  } 
+div.box3:hover{width: 300px; height: 300px;}
+div.box4{ background: orange; width: 300px; height: 300px; margin: 10px; 
+		 transition: all 2s;  } 
+div.box4:hover{background: red; border-radius: 50%;}	
+
+div.box5{ background: orange; width: 100px; height: 50px; margin: 10px; 
+		 transition: all 2s;  } 
+div.box5:hover{width: 300px; height: 300px; transform: rotateZ(45deg);}
+div.box6{ background: orange; width: 100px; height: 50px; margin: 10px; 
+		 transition: width; transition-duration: 5s; }
+#div1:hover{width:300px; transition-timing-function: linear; } 
+/* 똑같은 속도로 트랜지션 진행*/
+#div2:hover{width:300px; transition-timing-function: ease; } 
+/* 처음에는 천천히 점점빨라지다가 마지막엔 천천히 끝냄 : 기본값 */
+#div3:hover{width:300px; transition-timing-function: ease-in; }
+/* 시작을 느리게 */
+#div4:hover{width:300px; transition-timing-function: ease-out; }
+/* 느리게 끝냄 */
+#div5:hover{width:300px; transition-timing-function: ease-in-out; }
+/*느리게 시작하고 느리게 끝냄 */
+</style>
+</head>
+<body>
+<!-- 트랜지션: 웹요소의 스타일 속성을 조금씩 자연스럽게 변하는 것  -->
+<h1> 1. 요소의 색 변화 </h1>
+<div class="box1"></div>
+<h1> 2. 요소의 너비 변화 delay </h1>
+<div class="box2"></div>
+<h1> 3. 요소의 크기 변화 (너비 높이)</h1>
+<div class="box3"></div>
+<h1> 4. 정사각형 -> 원형으로 색도 함께 변형 </h1>
+<div class="box4"></div>
+<h1> 5. 크기변화 &  효과변화  </h1>
+<div class="box5"></div>
+<h1> 6. 요소전환의 속도 변환  </h1>
+<div id="div1" class="box6" ></div>
+<div id="div2" class="box6" ></div>
+<div id="div3" class="box6" ></div>
+<div id="div4" class="box6" ></div>
+<div id="div5" class="box6" ></div>
+
+</body>
+</html>

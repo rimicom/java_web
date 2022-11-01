@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 외부링크 & 비디오 삽입 </title>
+<style>
+header{width:100%; height:40px; border: 1px solid black; }
+div{width: 100%; height: 700px; overflow: hidden; }
+video{width: 100%; }
+h3{position: absolute; top: 100px; color: white; width:100%; text-align:center; }
+.box1{width:90%; height: 900px; margin : 0 auto;}
+
+</style>
+</head>
+<body>
+<header></header>
+<div>
+	<h3> 선택의 이유, 바이리즌 </h3>
+	<!--  <video src="./images/mv.mp4" controls muted loop></video> -->
+	<!-- autoplay: 자동재생
+		 controls: 컨트롤 바 표시
+		 loop: 반복재생 
+		 preload: 비디오 파일을 어떻게 로드할지 지정  
+		 		preload="none" , preload="meta", preload="auto"
+		 		                       메타정보만            전체 
+		       (autoplay 지정하면 preload 속성은 무시됨) 
+    -->
+    <video controls>
+		<source src="./images/mv.mp4" type="video/mp4"> 
+    </video>
+    
+    
+    
+</div>
+
+
+
+
+<!-- 
+<div class="box1">  
+	<iframe src="https://www.daum.net/" width="100%" height="900px" ></iframe>
+</div> 
+-->
+</body>
+</html>

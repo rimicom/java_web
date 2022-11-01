@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+*{margin: 0 auto;}
+header{width: 90%;   height: 50px;overflow:hidden; position:fixed; top:0px; 
+background: white;
+}
+header img{float:left;}
+header ul{margin-left:20px;}
+header ul li{list-style-type:none;	 float: left;  margin:10px;}
+header input{float:left;margin:10px;}
+@media (max-width: 600px) {
+  .menutxt {
+    display: none;
+  }
+}
+
+
+
+
+section{clear:both;}
+.topimg{
+width:90%; height: 500px; 
+background: url("./images/Yamagata502_1.webp");
+background-size: cover;
+}
+.bottomimg{width:90%;height:300px;}
+.box1{float: left;}
+.im{width:150px; height:150px; overflow:hidden;
+      margin:10px auto; border:1px solid black; margin: 10px; }
+.im01{width:150px; height:150px; background-image:url('./images/im01.jfif');
+      background-position:-30px -50px ; background-size:200px;
+      border:1px solid black; transition-property: all;
+      transition-duration: 2s;
+}
+.im01:hover{ transform:scale(1.3); }
+.im02{width:150px; height:150px; background-image:url('./images/im02.webp');
+      background-position:-30px -50px ;background-size:200px;
+      border:1px solid black; transition-property: all;
+      transition-duration: 2s;
+}
+.im02:hover{ transform:scale(1.3); }
+.im03{width:150px; height:150px; background-image:url('./images/im03.jfif');
+      background-position:-30px -50px ;background-size:200px;
+      border:1px solid black; transition-property: all;
+      transition-duration: 2s;
+}
+.im03:hover{ transform:scale(1.3); }
+.im04{width:150px; height:150px; background-image:url('./images/im04.jfif');
+      background-position:-30px -50px ;background-size:200px;
+      border:1px solid black; transition-property: all;
+      transition-duration: 2s;
+}
+.im04:hover{ transform:scale(1.3); }
+.txt{ clear:both; width: 150px; height:50px; font-size: 20px; 
+ text-align:center; line-height:50px;}
+</style>
+
+</head>
+<body>
+<header>
+<img src="//asset.japan.travel/image/upload/v1581485582/static/svg/common/img_logo_japan-endless-discovery.svg" width="100px">
+<div class="menutxt">
+<ul> <li>여행지</li><li>즐길거리</li><li>여행 계획하기</li><li>최신뉴스</li></ul>
+<input type="text" value="검색">
+</div>
+</header>
+<section>
+<div class="topimg"> </div>
+
+<div class="bottomimg">
+	<div class="box1">
+		<div class="im">
+			<div class="im01"></div>
+		</div>
+		<div class="txt">1월의 일본</div>
+	</div>
+	<div class="box1">
+		<div class="im">
+			<div class="im02"></div>
+		</div>
+		<div class="txt">2월의 일본</div>
+	</div>
+	<div class="box1">
+		<div class="im">
+			<div class="im03"></div>
+		</div>
+		<div class="txt">3월의 일본</div>
+	</div>
+	<div class="box1">
+		<div class="im">
+			<div class="im04"></div>
+		</div>
+		<div class="txt">4월의 일본</div>
+	</div>
+</div>
+
+</section>
+<footer> </footer>
+</body>
+</html>
