@@ -3,14 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src = './js/js1103_02.js'></script>
+<script src = './js/js1103_03.js'></script>
 <style>
 .a1{color: blue;}
 .a2{color: red;}
 </style>
 </head>
 <body>
+<h2 id ="h2color"> 아이디로 찾아서 내용 변경하기  </h2>
+<p id ="txt"> 이곳의 내용을 변경할 예정입니다 </p> 
+<hr>
+<p class="tod"> 오늘 일정 </p>
+<div class="box">
+	<p> 자바스크립트 스터디 공부 </p>
+	<div id="info">
+		<p class="box"> 장소: 학교 </p>
+		<p class="box"> 시간: 12시 </p>
+	</div>
+ </div>
 
+<script>
+	console.log(document.getElementsByClassName("tod"));
+	document.getElementsByClassName("tod").item(0).innerHTML = "today";
+	console.log(document.getElementsByClassName("box"));
+	document.getElementsByClassName("box").item(2).style.color="red";
+
+
+
+
+
+	console.log(document.getElementById("txt").innerHTML);
+	document.getElementById("txt").innerHTML = "이 문장으로 바뀌었습니다.";
+	console.log(document.getElementById("txt").innerHTML);
+	document.getElementById("h2color").style.color = "green";
+</script> 
 
 </body>
 </html>

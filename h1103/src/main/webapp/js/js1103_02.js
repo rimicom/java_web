@@ -3,7 +3,7 @@ document.write ('<p class="a1">안녕하세요 </p>');
 
 for(var i = 2; i<=9; i++){
 	
-	if(i%2 !=0){ continue; } // 짝수단만 출력 
+	if(i%2 != 0){ continue; } // 짝수단만 출력 
 	
 	for(var j = 1; j<=9;j++){
 		document.write(i+' * '+j+' = '+(i*j)+'<br>');
@@ -11,19 +11,22 @@ for(var i = 2; i<=9; i++){
 	}
 }
 // 짝수단은 파랑, 홀수단은 빨강 출력
+// .a1{color: blue;}  .a2{color: red;}
+
 
 for(var i = 2; i<=9; i++){
-	
 	if(i%2 !=0){// 홀수단일때
 		for(var j = 1; j<=9;j++){
-			document.write("<>"+i+' * '+j+' = '+(i*j)+'<br>');
-		}
-	}  
+			document.write('<p class="a2">'+i+' * '+j+' = '+(i*j)+'</p>');
+		} //for j 
+	}  //if
 	else{ // 짝수단일때 
-		
-	}
+		for(var j = 1; j<=9;j++){
+			document.write('<p class="a1">'+i+' * '+j+' = '+(i*j)+'</p>');
+		}// for j 
+	}//else
 	
-}
+}// for i 
 
 
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = './js/js1103_03.js'></script>
+</head>
+<body>
+<form action="#" method="get" name="frm">
+	<label>이름</label>
+    <input type="text" name="name" id="name"><br>
+    <select name="birth" id="birth">
+    	
+     </select>
+    <label>년</label>
+    <br>
+    <input type="submit" value="전송">
+</form>
+<script>
+
+let str=''
+    for(let i=1900;i<=2022;i++){
+    	str += " <option value='" + i + "'>"+  i + " </option> " 
+    }
+    
+document.getElementById("birth").innerHTML=str;
+
+
+
+</script>
+</body>
+</html>
