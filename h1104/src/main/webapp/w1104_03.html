@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+table, td{border: 1px solid black; border-collapse: collapse;}
+table{width:800px; margin: 50px auto; }
+</style>
+<script>
+// confirm() 창에서 확인 -> return true; 
+// confirm() 창에서 취소 -> return false;
+    function deleteBtn(){
+    	let ans = confirm('글을 삭제하시겠습니까?');
+    	if(ans){
+    		// 조건이 참일때 
+    		alert('삭제되었습니다');
+    	}else{
+    		// 조건이 거짓일때 
+    		alert('삭제되었습니다');
+    	}
+    	
+    	
+    }
+	
+	
+</script>
+</head>
+<body>
+
+<table>
+	<tr>
+		<td> 번호 </td>
+		<td> 글제목 </td>
+		<td> 작성자 </td>
+		<td> 조회수 </td>
+	</tr>
+	<tr>
+		<td> 1 </td>
+		<td> 글을 작성합니다 </td>
+		<td> 홍길동  </td>
+		<td> 13 <button onclick="deleteBtn()" >삭제</button></td>
+	</tr>
+</table>
+
+</body>
+</html>

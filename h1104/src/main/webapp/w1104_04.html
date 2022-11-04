@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/* id : admin , pwd : 1111 
+아이디랑, 비밀번호를 입력받습니다. 
+아이디랑 비밀번호가 입력한것이 관리자면 (로그인성공) -> 네이버화면으로 이동 
+틀리면, 아이디 또는 비밀번호가 일치하지 않습니다 (alert창띄우기)
+
+*/
+function myFunc(){
+	document.getElementById('myH1').setAttribute("class","setcolor");
+	// id: test 에 a 링크추가(네이버로 이동)
+}
+</script>
+<style>
+.setcolor{  color : blue; }
+</style>
+</head>
+<body>
+
+<h1 id= "myH1"> 여기 색을 바꿀꺼에요  </h1>
+<p><a id="test" target="_blank"> 링크를 추가해보세요 </a></p>
+<button onclick="myFunc()"> 클래스 추가하는 함수 </button>
+
+
+<button onclick="loginBtn()">로그인</button>
+	
+</body>
+</body>
+</html>
