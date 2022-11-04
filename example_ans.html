@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let today;
+    let todayYear, todayMonth,todayDate, todayDay;
+    let yo = ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'];
+    function displayToday(){
+        	
+    	today = new Date();
+        todayYear = today.getFullYear(); //2022
+        todayMonth = today.getMonth()+1; //0월->0+1월,1,2,....11
+        todayDate = today.getDate();     //1,2,3,....31
+        todayDay = today.getDay();        //0-일요일 1-월요일,1-화,수...금,6-토  
+        document.getElementById('yr').innerText=todayYear;
+        document.getElementById('mn').innerText=todayMonth;
+        document.getElementById('dy').innerText=todayDate;
+        document.getElementById('dt').innerText=yo[todayDay];
+        
+    }
+    function displayTomorrow(){
+    	
+    	let year = document.getElementById('yr').innerText;
+        let month = document.getElementById('mn').innerText;
+        let date = document.getElementById('dy').innerText;
+        let day = document.getElementById('dt').innerText;
+        let numday = 0; 
+        
+        // 만약에 12월 31일이면 하루 후는 1월 1일이며 연도가 변하기 때문에 고려를 해줘야 한다. 
+        if ( month == 12 && date == 31 ){
+        	year = Number(year)+1; 
+        	month = 1; 
+        	date = 1; 
+        }
+        
+        // 1,3,5,7,8,10,12 월인 경우는 31일까지 있다. 
+        // 2 는 28일까지 있다고 가정 (윤년 생략 )
+        // 4,6,9,11 은 30일까지 있다. 
+        // 31일 30일 이후에는 날짜는 1로 바뀌고 달은 1을 더해주면된다. 
+        // 그 외의 경우에는 날짜만 1 증가시키면된다. 
+        
+        if( (month == 1 || month == 3 || month == 5 || month ==7 || month ==8 || month==10) && date == 31){
+        	month = Number(month) +1 ; 
+        	date = 1; 
+        }else if((month == 2 ) && (date==28)){
+        	month = Number(month) +1 ; 
+        	date = 1; 
+        }else if((month == 4 || month == 6 || month == 9 || month == 11   ) && (date== 30)){
+        	month = Number(month) +1 ; 
+        	date = 1; 
+        }else{
+        	date = Number(date)+1;
+        }
+        
+        // 요일의 경우에는 yo에 몇번째 있는 숫자인지를 먼저 찾아내야한다. 
+        for(var i = 0 ; i <= yo.length; i++ ){
+        	if(yo[i] == day)
+        		numday = i;
+        }
+        
+        // 몇번째 숫자인지 알게 되면 다음날은 1증가하면되므로 1 더해주면되는데.
+        // 토요일일 경우에만 0으로 바꿔주면된다. 
+        if(numday == 6){
+        	numday = 0; 
+        }else{
+        	numday = numday+1;
+        }
+        
+        document.getElementById('yr').innerText=year;
+        document.getElementById('mn').innerText=month;
+        document.getElementById('dy').innerText=date;
+        document.getElementById('dt').innerText=yo[numday];
+        
+
+    
+ }
+        
+    </script>
+<style>
+  h2,#result{width:1000px; height:140px; font-size:100px;
+  font-weight: 600; margin:0 auto; text-align:center;}
+  h2{margin:0 auto;}
+  button{width:180px; height:80px; font-size:30px;}
+  div{width:400px; margin: 0 auto;}
+</style>
+</head>
+<body>
+    <h2>오늘 날짜</h2>
+    <div id="result">
+    	<span id="yr">2000</span>.<span id="mn">12</span>.<span id="dy">31</span>.<span id="dt">월요일</span>
+    </div>
+    
+    <div>
+        <button onclick="displayToday()">오늘</button>
+        <button onclick="displayTomorrow()">다음날</button>
+    </div>
+    
+    
+</body>
+</html>

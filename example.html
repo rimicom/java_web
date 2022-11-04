@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+<!--  1. 오늘을 클릭하면 날짜를 계산해서 (Date()함수 활용) 오늘날짜로 보이게 하는 함수를 만들어 주세요 . 
+
+      2. 만약에 1번을 끝내신 분들은 다음날 버튼을 누르면 현재보이는 날짜에서 내용을 가져와서 다음날을 출력해보세요 
+      (2월은 28일까지만 있다고 가정) 
+      
+      오전에 말씀드린 것 중에서 틀린게 있어서 여기에 적습니다. 
+      
+      todayDay = today.getDay();        //0-일요일 1-월요일,1-화,수...금,6-토 
+      요일을 알려주는 함수에서 0을 월요일이라고 적었는데 0은 일요일로 정정합니다. 
+      
+
+ -->
+    <h2>오늘 날짜</h2>
+    <div id="result">
+    	<span id="yr">2000</span>.<span id="mn">12</span>.<span id="dy">31</span>.<span id="dt">월요일</span>
+    </div>
+    
+    <div>
+        <button onclick="displayToday()">오늘</button>
+        <button onclick="displayTomorrow()">다음날</button>
+    </div>
+    
+    
+</body>
+</html>
