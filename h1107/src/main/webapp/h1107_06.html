@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<button onclick="event_popup()">팝업창 오픈 </button><br><br>
+<button onclick="sizeFirst()">사이즈 초기화 </button><br><br>
+<button onclick="sizePlus()">창 사이즈 증가 </button><br>
+
+<script>
+let w; 
+function event_popup(){
+	// alert("pop");
+	w = window.open("","pop-name","width=150px, height=150px, left=0px,top=0px",) 
+	// (url, name,specs)
+}
+function sizeFirst(){
+	// alert("first");
+	w.resizeTo(150,150);
+	//w.focus();
+}
+function sizePlus(){
+	// alert("plus");
+	w.resizeBy(10,10);
+	w.focus();
+}
+
+</script>
+</body>
+</html>

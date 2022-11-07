@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = "./js/js1107_05.js"></script>
+<style>
+table,td{border:1px solid black; border-collapse: collapse;}
+table{width:400px; margin:0 auto; text-align: center;}
+td{height:40px; }
+#txt{color:red;font-size:12px;}
+</style>    
+   
+</head>
+<body>
+
+<form action="http://www.naver.com" method="get" name="frm">
+    <table>
+        <tr>
+            <td>아이디</td>
+            <td><input type="text" name="id" id="id"></td>
+        </tr>
+        <tr>
+            <td>패스워드</td>
+            <td><input type="password" name="pw" id="pw"></td>
+        </tr>
+        <tr>
+            <td colspan="2" id="txt"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+               <input type="submit" onclick="loginCheck()" value="로그인">
+               <!--  <button type="button" onclick="loginCheck()">로그인</button> -->
+            </td>
+        </tr>
+    </table>
+    </form>
+    
+    
+    
+
+</body>
+</html>
