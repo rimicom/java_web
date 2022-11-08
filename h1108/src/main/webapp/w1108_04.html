@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(function(){
+	// 
+	$('*').css('text-align','center'); //전체 선택자
+	$('.box1').css('background','green'); 
+	$('.box1 p').css('color','blue'); 
+	// 박스1의 하위요소를 선택해서 변경할 수 있다. 
+	$('.active').next('p').css('border','1px solid red');
+	// active 클래스 다음에 있는 p태그를 찾아서 스타일 변경 
+	$('.box1 p').eq(0).css('background','tomato'); 
+	// p 태그 중 몇번째를 선택해서 적용 할 수 있다. 
+	$('input[type="text"]').css({"background":"orange"});
+	// 속성 선택자 
+	
+	$('.box1 p').eq(1).removeClass("active");
+	// 속성삭제
+	
+	$('.box1').append("<p> append를 사용했습니다 </p>");
+	// 뒤에 붙이기
+	$('.box1').prepend("<p> prepend를 사용했습니다 </p>");
+	// 앞에 붙이기 
+});
+</script>
+</head>
+<body>
+<div class="box1">
+	<p> TEXT1 </p>
+	<p class="active"> content1 </p>
+	<p><a href="#"> naver </a></p>
+	<p>
+		<input type="text" value="aaa">
+	</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(function(){
+	// 코드작성 
+	var items = $('li'); // li 요소를 모두 선택해서 변수 item에 저장
+	$('#len').text("저장된 <li>요소는 총 "+items.length+"개");
+	$('li:has(span)').text("<span>을 포함하고 있습니다");
+	
+	$('form').on('click', function(){
+		//체크되어 있는 요소를 선택 
+		$(':checked').next().text("체크되어있는 요소입니다.");
+	});
+	
+});
+</script>
+</head>
+<body>
+<h1>선택한 요소의 저장</h1>
+<ul> 
+	<li>첫번째 아이템</li>
+	<li><span>두번째 아이템</span></li>
+	<li>세번째 아이템</li>
+</ul>
+<p id = "len"></p>
+
+<form>
+	<input type="checkbox" name="lect" value="html">
+	<span>HTML</span><br>
+	<input type="checkbox" name="lect" value="css" checked>
+	<span>CSS</span><br>
+	<input type="checkbox" name="lect" value="js">
+	<span>자바스크립트</span><br>
+	<input type="checkbox" name="lect" value="jq" checked>
+	<span>제이쿼리</span><br>
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+$(function(){
+	$('.btn1').click(function(){
+		alert('호출')
+		let str1 = '<img src="./images/1.jpg">';
+		//$('.btn1').parent().next().html(str1) ;
+		$('p').eq(1).html('<img src="./images/1.jpg">');
+	});
+});
+</script>
+</head>
+<body>
+	<p>
+		<button class="btn1">버튼1</button>
+	</p>
+	<p>내용1</p>
+</body>
+</html>

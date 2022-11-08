@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(function (){
+	// 제이쿼리 함수 사용할 수 있음 . 
+	$('button').on('click', function(){
+		//alert('호출');
+		var str = "이 div 요소의 ";
+		str += "너비는 "+ $('#box1').width() + "픽셀이고, <br>";
+		str += "높이는 "+ $('#box1').height() + "픽셀이고, <br>";
+		$('#text1').html(str);
+		
+		var str1 = "";
+		str1 += "브라우저 뷰포트 크기는 "+ $(window).width();
+		str1 += "x"+$(window).height()+"입니다<br>";
+		str1 += "html 문서크기는 "+ $(document).width();
+		str1 += "x"+$(document).height()+"입니다<br>";
+		$('#text2').html(str1);
+		
+		
+		$('#box2').width('100px');
+		$('#box2').height('20px');
+	});
+	
+	
+});
+</script>
+<style>
+p{width:500px; height:100px; border: 2px solid red;}
+#box2{width:100px; height: 100px; background: tomato;}
+</style>
+</head>
+<body>
+	<div id='box1'>
+		<p id='text1'></p>
+		<p id='text2'></p>
+	</div>
+	<div id='box2'></div>
+	<br>
+	<button> click </button>
+</body>
+</html>

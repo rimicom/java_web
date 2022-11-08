@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+// 코드를 작성할 스크립트 
+$(function(){
+	// 제이쿼리 함수쓰기 . 
+	$('#addBtn').on('click', function(){
+		//alert('추가버튼');
+		$('#box1, #box2').addClass('bkcolor');
+	});
+	$('#removeBtn').on('click', function(){
+		//alert('제거버튼');
+		$('#box1, #box2').removeClass('bkcolor');
+	});
+	$('#toggleBtn').on('click', function(){
+		//alert('토글버튼');
+		$('#box1, #box2').toggleClass('bkcolor');
+	});
+	
+	//$( 'div' ).html( '<h1>안녕하세요</h1>' );
+});
+</script>
+<style>
+.bkcolor{background:lightgray;}
+</style>
+</head>
+<body>
+<div>????????????</div>
+<h1> 클래스의 추가 및 제거 </h1>
+<p id="box1">클래스 추가</p>
+<p id="box2">클래스 추가</p>
+<button id='addBtn'>클래스 추가</button>
+<button id='removeBtn'>클래스 제거</button>
+<button id='toggleBtn'>클래스 토글</button>
+</body>
+</html>

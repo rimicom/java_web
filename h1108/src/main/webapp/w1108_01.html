@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 다운받은 jquery 파일 사용하기  -->
+<script src ="./js/jquery.min.js"></script>
+<!-- 웹에서 최신버전 가져오기 
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+-->
+<script>
+	/* $(document).ready(function(){ 
+		// 제이쿼리 코드를 사용
+	}); */
+	
+	// 축약버전
+	$(function(){
+		// 제이쿼리 코드를 사용 
+		$('div').html('<h1>학생성적프로그램</h1>');
+		//$('div').text('<h1>학생성적프로그램</h1>');
+		$('.saveBtn').click(function(){
+			// alert('제이쿼리를 불렀습니다');
+			let k = $('#kor').val();
+			
+			alert('국어점수 : '+ k);
+			
+		});
+		
+	});
+	
+	function sBtn(){
+		let kor = document.getElementById('kor').value;
+		alert("국어점수 : "+kor);
+		
+	}
+	
+	
+</script>
+</head>
+<body>
+<div> ??????????? </div>
+<form>
+	<label>이름</label>
+	<input type="text" name="name" id="name"><br>
+	<label>국어</label>
+	<input type="text" name="kor" id="kor"><br>
+	<label>영어</label>
+	<input type="text" name="eng" id="eng"><br>
+</form>
+<button class="saveBtn" onclick="">저장</button>
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(function(){
+	/* $('button').on('click', function(){
+		alert('클릭하셧습니다');
+		
+	}); */
+	
+	$('button').click(function(){
+		$("p").parent().css({"border":"2px solid red"});
+		// p 요소의 부모요소를 선택해서 스타일 변경 
+		$("p").parents("div").css({"border":"2px solid green"});
+		// p 요소의 조상들 중 div를 선택해서 스타일 변경
+		
+		$("li").siblings().css({"background":"beige"});
+		// li요소의 형재 요소에 스타일 변경
+		
+		$("ul").next().css({"border":"2px solid orange"});
+		// ul 다음 요소를 찾아서 스타일 변경 
+		
+		$("ul").children().css({"color": "blue"});
+		// ul 요소의 자손을 찾아 스타일 변경 
+		
+		// $("li").css({'color':'blue'});
+		
+		$("li").find("*").css({'background':'pink'});
+		// li 요소의 자손 요소를 선택해 스타일 변경 
+		$("li").first().css({"border":"2px solid brown"});
+		$("li").last().css({"border":"2px solid purple"});
+		$("li").eq(1).css({'background':'lightblue'});
+	});
+	
+})
+</script>
+
+
+<style>
+.container * {list-style:none; border: 1px solid gray;
+				padding: 5px; margin: 15px;	}
+</style>
+
+</head>
+<body>
+	<h1>요소찾기</h1>
+	<div class="container"> container 
+		<div> div 요소 
+			<ul> ul 요소
+				<li> li 요소 1 </li>
+				<li> li 요소 2
+					<p> p 요소
+						<span>span 요소</span>
+					</p>
+				</li>
+				<li> li 요소 3 </li>
+			</ul>
+			<p> p 요소2 </p>	
+		</div>
+	</div>
+	<button>click</button>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(function(){
+	// 코드 사용 
+	$("p").on("click", function(){
+		// 클래스가 jClass인 요소를 모두 선택 변경
+		$('.jClass').css("background", "lightgray");
+		// 아이디가 jId인 요소를 선택 변경
+		$('#jId').css("border","2px solid red");
+		// 속성 선택자로 변경이 가능하다 
+		$("img[alt='cat']").attr("src","./images/2.jpg");
+		
+	});
+	
+});
+</script>
+
+</head>
+<body>
+	<h1>아이디와 클래스 선택자</h1>
+	
+	<p id="jId"> 아이디 선택자로 특정 요소를 선택 할 수 있다 </p>
+	
+	<p class="jClass">클래스 선택자로</p>
+	<p class="jClass">특정요소를 한번에 선택할 수 있다. </p>
+	
+	<img src="./images/1.jpg" alt="cat"><br>
+	
+	<p> 마우스로 글씨를 클릭해보세요 </p>
+	
+
+</body>
+</html>
