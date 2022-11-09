@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+// click , mouseover 
+$(function(){
+	/*
+	$('.btn1 a').mouseover(function(){
+		alert('경고');
+	}); 
+	$('.btn1 a').focus(function(){ // 키보드 환경에서 
+		alert('경고');
+	}); */
+	
+	$('.btn1 a').on("mouseover focus", function(){
+		// alert('경고');
+		let ts = $(this);
+		ts.css("background","orange");
+	});
+	
+	$('.btn1 a').on("click", function(){
+		$(this).parent().next().show();
+		
+		return false; 
+	});
+	
+	
+	
+	// mouseenter: 마우스가 버튼위로 들어갔어요 ,
+	// click: 클릭했어요 
+	// mouseleave :마우스가 빠져나갔어요 
+	// <p id='text'></p>에 글 넣기 > append 로 붙이기 
+	/*
+	$('button').mouseenter(function(){
+		$("#text").append('마우스가 버튼위로 들어갔어요 <br>');
+	});
+	$('button').click(function(){
+		$("#text").append('클릭했어요 <br>');
+	});
+	$('button').mouseleave(function(){
+		$("#text").append('마우스가 빠져나갔어요 <br>');
+	});
+	*/
+	$('button').on({
+		mouseenter: function(){
+			$("#text").append('마우스가 버튼위로 들어갔어요 <br>');
+		},
+		click: function(){
+			$("#text").append('클릭했어요 <br>');
+		},
+		mouseleave: function(){
+			$("#text").append('마우스가 빠져나갔어요 <br>');
+		}
+	}); // on 
+});// function
+</script>
+</head>
+<body>
+<p class="btn1">
+	<a href='https://www.naver.com/'>마우스오버</a>
+</p>
+<ul style="display:none;">
+	<li>list1</li>
+	<li>list2</li>
+	<li>list3</li>
+</ul>
+<hr>
+<button>마우스를 버튼위로 가져가거나 클릭해보세요 </button>
+<p id='text'></p>
+</body>
+</html>

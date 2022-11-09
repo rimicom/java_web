@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 배열 each </title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(function(){
+	
+	let arr = ['one','two','three','four','five'];
+	// 배열
+	// arr[0] = 'one';
+	let obj = { one:1, two:2, three:3, four:4, five:5 };
+	// dictionary [key, value] 
+	// obj['one'] = 1 ;
+	
+	for (var i = 0 ; i < arr.length; i++){
+		console.log(arr[i]);
+	}
+	$.each(arr, function(i,val){
+		console.log(i+ " : "+val);
+		//return (val !== 'three');
+	})
+	$.each(obj, function(key,val){
+		console.log(key +" : "+ val);
+	});
+	
+	
+	$('button').click(function(){
+		
+		$('a').each(function(index, value){
+			
+			// console.log(index + ' : '+ value);
+			$(value).attr('target','_blank');
+			// 클래스추가 1번째: cls1, 2번째 : cls2, 3번째: cls3
+			// <a href="https://www.naver.com/" target='_blank' class='cls1'>
+			// $(value).addClass('cls'+(index+1));
+			
+			$(this).addClass('cls'+(index+1));
+			
+			
+		});
+		
+		
+	});
+	
+});
+
+</script>
+</head>
+<body>
+<ul>
+	<li><a href="https://www.naver.com/">naver</a></li>
+	<li><a href="https://www.daum.net/">daum</a></li>
+	<li><a href="https://www.google.com/">google</a></li>
+</ul>
+<button>click</button>
+
+
+</body>
+</html>

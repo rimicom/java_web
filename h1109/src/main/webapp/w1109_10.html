@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(function(){
+	$('div').on('mouseenter', function(){
+		$('#text').append('마우스가 진입했어요<br>');
+	});
+	$('div').on('mouseleave', function(){
+		$('#text').append('마우스가 빠져나갔어요<br>');
+	});
+	
+	// 자식요소 까지 감지 
+	$('div').on('mouseover', function(){
+		$('#text').append('mouseover 마우스가 진입했어요<br>');
+	});
+	// 자식요소 까지 감지
+	$('div').on('mouseout', function(){
+		$('#text').append('mouseout 마우스가 빠져나갔어요<br>');
+	});
+	
+	$('div').hover(function(){
+		$('#text').append('마우스가 진입하거나 빠져나갓어요 <br>');
+	});
+	
+	
+});
+
+</script>
+<style>
+div{background: lightblue; border:2px solid black;}
+li{border:2px solid blue;}
+</style>
+</head>
+<body>
+<div>
+	<ul>
+		<li> li요소1 </li>
+		<li> li요소2 </li>
+		<li> li요소3 </li>
+	</ul>
+</div>
+<p id="text"></p>	
+</body>
+</html>

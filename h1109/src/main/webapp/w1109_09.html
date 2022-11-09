@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> a, form 이벤트 차단 </title>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+// 1. return false; 이용
+// 2. preventDefault(); 이용
+	$(function(){
+		// 한번만 추가할때 one
+		$('button').one('click', function(){
+			$('ul').append('<li><a href="https://www.google.com/">google</a></li>')
+		});
+		/*
+		$("ul a").eq(0).on('click', function(){
+			$("#text").append('이 링크는 동작하지 않습니다.<br>');
+			return false; 
+		});
+		$("ul a").eq(1).on('click', function(event){
+			$("#text").append('이 링크는 동작하지 않습니다.<br>');
+			event.preventDefault();
+		});
+		
+		
+		$("ul a").on('click', function(){
+			$("#text").append('이 링크는 동작하지 않습니다.<br>');
+			return false; 
+		});
+		*/
+		
+		$("ul").on('click','a', function(){
+			$("#text").append('이 링크는 동작하지 않습니다.<br>');
+			return false; 
+		});
+		
+		//.on() 메소드는 해당 요소에 첫 번째 인수로 전달받은 이벤트가 전파되었을 때, 
+		// 그 이벤트를 발생한 요소가 두 번째 인수로 전달받은 선택자와 같은지를 검사합니다.
+		// 만약 이벤트가 발생한 요소와 두 번째 인수로 전달받은 선택자가 같으면, 연결된 이벤트 핸들러를 실행합니다.
+
+		
+		
+		
+	});
+</script>
+
+</head>
+<body>
+<ul>
+	<li><a href='https://www.naver.com/'>naver</a></li>
+	<li><a href='https://www.daum.net/'>daum</a></li>
+</ul>
+<button> 리스트 추가 </button>
+<p id="text"> </p>
+</body>
+</html>

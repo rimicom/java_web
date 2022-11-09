@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클릭 더블클릭</title>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(function(){
+	// click  dblclick
+	$('button').click(function(){
+		$('#clickText').css('color','red');
+		$('#dbclickText').css('color','black');
+	});
+	$('button').dblclick(function(){
+		$('#clickText').css('color','black');
+		$('#dbclickText').css('color','red');
+	});
+	
+});
+</script>
+</head>
+<body>
+<p><span id="clickText">클릭</span>&nbsp;&nbsp;
+   <span id="dbclickText">더블클릭</span></p>
+<button>클릭</button>
+</body>
+</html>

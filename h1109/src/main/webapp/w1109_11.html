@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>키보드</title>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+/*
+keyup() - 키보드에서 손을 떼어냈을때 실행됨.
+keydown() - 키보드를 눌렀을때 실행됨
+keypress() - 키보드를 눌렀을때 실행됨
+
+키보드를 누르고있을때 KEYUP 이벤트는 한번만 실행됨, 
+그러나 keydown,keypress 는 키보드에서 손을뗄떼까지 계속 실행됨.
+
+ctrl,shift,alt 등의 수정 키를 누를경우 keydown은 작동하지만
+keypress는 작동하지 않음
+
+아스키 코드 표현이 
+keydown() , keyup() => a = 65, A = 65 
+keypresss() => a= 97, A=65 
+
+*/
+$(function(){
+	var keypressCnt = 0 ;
+	var keydownCnt = 0;
+	var keyupCnt = 0;
+	
+	$('#key').on({
+		keypress : function(e){
+			$('#text1').html(e.type + " : " + e.which + ', 누적카운트: '+(++keypressCnt) );
+		},	
+		keydown : function(e){
+			$('#text2').html(e.type + " : " + e.which + ', 누적카운트: '+(++keydownCnt) );
+		},	
+		keyup : function(e){
+			$('#text3').html(e.type + " : " + e.which + ', 누적카운트: '+(++keyupCnt) );
+		},	
+	
+	
+	
+	})
+	
+	
+	
+	
+	
+});
+
+
+</script>
+</head>
+<body>
+<input type='text' id='key'>
+<p id='text1'></p>
+<p id='text2'></p>
+<p id='text3'></p>
+
+</body>
+</html>

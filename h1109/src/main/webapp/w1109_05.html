@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>trigger 이벤트 강제 발생 </title>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(function(){
+	var number = 0 ; 
+	$('#myDiv').click(function(){
+		number ++ ;
+		$('#mySpan').text(number);
+	});
+	$('#myBtn').click(function(){
+		$('#mySpan').trigger('click');
+	});
+	
+	
+});
+</script>
+</head>
+<body>
+<div id = "myDiv">
+	<span id="mySpan">0</span>
+</div>
+<br>
+<button id='myBtn'>click</button>
+</body>
+</html>

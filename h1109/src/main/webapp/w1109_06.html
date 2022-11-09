@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 제거 off </title>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(function(){
+	// id 가 clickbtn요소를 클릭햇을때 실행 
+	$('#clickBtn').on("click", function(){
+		$('#text').append("버튼 클릭 <br>");
+	});
+	// id clickBtn 요소의 클릭 이벤트와의 연결 제거 
+	$('#removeBtn').on("click", function(){
+		$('#clickBtn').off("click");
+	});
+	
+});
+</script>
+</head>
+<body>
+<button id='clickBtn'>클릭</button>
+<button id='removeBtn'>클릭 제거</button>
+<p id="text"></p>
+</body>
+</html>

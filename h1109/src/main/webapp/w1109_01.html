@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> this 사용 </title>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+	$(function(){
+	
+		$('input').click(function(){
+			// $('input').val("누름");
+			$(this).val("누름");
+			// this는 자기 자신을 가리킵니다. 
+		});
+			
+	});
+
+</script>
+</head>
+<body>
+
+<input class="btn1" type="button" value="버튼1">
+<input class="btn2" type="button" value="버튼2">
+<input class="btn3" type="button" value="버튼3">
+
+</body>
+</html>

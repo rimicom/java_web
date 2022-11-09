@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(function(){
+	$('#memberBtn').click(function(){
+		let len = $('input[name=agree]:checked').length;
+		alert("체크 개수 : " + len );
+		if(len < 2){
+			alert('정보수집 동의를 하셔야 가입이 가능합니다');
+			if ( confirm('정보수집 동의를 체크하시겠습니까 ?')){
+				// alert('동의함');
+				$('input[name=agree]').each(function(){
+					
+					console.log(this);
+					// 해당 이벤트가 발생한 요소를 표시
+					console.log($(this)); 
+					// 이벤트가 발생하면 발생한 태그를 object형태로 감싸서 표시 
+					this.checked = true; 
+					// $(this)[0].checked = true; 
+					
+				});
+			};
+		}
+	}); // memberBtn
+}); // function
+</script>
+</head>
+<body>
+<form action="#" method='get' name='frm'>
+
+	<label>개인정보수집 동의1</label>
+	<input type="checkbox" name="agree" id="agree1" value="yes">
+    <br>
+    <label>개인정보수집 동의2</label>
+    <input type="checkbox" name="agree" id="agree2" value="yes">
+    <br>
+    <input type="submit" id="memberBtn" value='회원가입' >
+</form>
+</body>
+
+
+</html>
