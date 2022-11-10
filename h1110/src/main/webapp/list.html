@@ -10,9 +10,79 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/notice_list.css">
   <script>
+  $(function(){
+	  let today = new Date();
+      let year = today.getFullYear();
+      let month = (today.getMonth()+1);
+      if(month<10){
+    	  month = '0'+month;
+      }
+      let day = today.getDate();
+      day = day < 10 ? '0'+day : day; 
+      // 2022/9/9 -> 2022/09/09  숫자+문자 => 문자 0+1 = 01
+      let todayDate = year+'/'+month+'/'+day;
+      
+      $("#fdate").val(todayDate);
+
+      
+	  let arr1=[1,'안녕하세요',todayDate,'홍길동',1];
+	  let arr2=[2,'반가워요',todayDate,'이순신',1];
+	  let arr3=[3,'첫글남겨요',todayDate,'유관순',1];
+	  let arr4=[4,'hi',todayDate,'김구',1];
+	  let arr5=[5,'좋은하루',todayDate,'고길동',1];
+	  let arr = [arr1, arr2, arr3, arr4, arr5];
+	  let count = 0 ;
+	  let str = '';
+	  for(var i = 0 ; i< arr.length; i++){
+		count++;
+		str += '<tr id="' + count + '">';
+		str += '<td>'+ count + "</td>";
+		str += '<td>'+ arr[i][1] + "</td>";
+		str += '<td>'+ arr[i][2] + "</td>";
+		str += '<td>'+ arr[i][3] + "</td>";
+		str += '<td>'+ arr[i][4] + "</td>";
+		str += '</tr>';
+	  }
+	  $('#tbody').html(str);
+
+	  $('#fBtn').click(function(){
+		  count++;
+		  let str = '<tr id="' +count + '">';
+		             
+		  str += '<td>'+ count + "</td>";
+          str += '<td>'+ $('#ftitle').val() + "</td>";
+          str += '<td>'+ $('#fdate').val() + "</td>";
+          str += '<td>'+ $('#fuser').val() + "</td>";
+          str += '<td>'+ $('#fhit').val() + "</td>";
+          str += '</tr>';
+          $('#tbody').append(str);
+		  
+	  });
+	  
+	  $('#fopen').click(function(){
+		  let fid = '#'+ $('#fidNo').val(); // #1, #2 
+		  // section > p {color:blue }
+		  
+		  let t1 = $(fid+">td:nth-child(2)").text(); // n번째 아이 
+		  $('#ftitle').val(t1);
+		  
+	  });
+	  $('#fdelete').click(function(){
+		  let id = $('#fidNo').val();
+		  id = id.trim(); // 공백제거함수  
+		  if(confirm('데이터를 삭제하시겠습니까?')){			  
+              $("#"+id).remove();  // $('#2') 
+              
+		  }
+		  
+	  });
+	  
+	  
+	  
+	  
+	  
+  });
   
-
-
  
   </script>
 
@@ -81,17 +151,26 @@
     
     <form action="#" method="get" name="frm" id="frm">
       <label>번호</label>
-      <input type="text" name="fno" id="fno"><br>
+      <input type="hidden" name="fno" id="fno"><br>
       <label>제목</label>
       <input type="text" name="ftitle" id="ftitle"><br>
       <label>작성일</label>
-      <input type="text" name="fdate" id="fdate"><br>
+      <input type="text" name="fdate" id="fdate" readonly><br>
       <label>작성자</label>
       <input type="text" name="fuser" id="fuser"><br>
       <label>조회수</label>
       <input type="text" name="fhit" id="fhit"><br>
       
       <input type="button" id="fBtn" value="쓰기">
+      &nbsp;
+      <input type="button" id="fmodify" value="수정">
+      <br>
+      <br>
+      <label>해당번호</label>
+      <input type="text" name="fidNo" id="fidNo" ><br>
+      <input type="button" id="fopen" value="불러오기">&nbsp;
+      <input type="button" id="fdelete" value="삭제">
+      
     </form>
     <!-- <div class="write" id="fwrite">쓰기</div> -->
   </section>

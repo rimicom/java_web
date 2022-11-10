@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+	
+	$('#tBtn').click(function(){
+		// { key : value, } => 딕셔너리 타입 
+		// json 파일의 구조 
+		//	                0                   1                      2
+		let arr = [['aaa','홍길동','1111'],['bbb','이순신','2222'],['ccc','유관순','3333']];
+		//             0      1       2
+		//  arr [{0:'aaa', 1:'홍길동', 2:'1111'}]
+		let obj =[
+            {stuId:"aaa",stuName:"홍길동",stuPw:1111},
+            {stuId:"bbb",stuName:"이순신",stuPw:2222},
+            {stuId:"ccc",stuName:"유관순",stuPw:3333}
+        ]	
+		let str = ''; 
+		/*
+		for(var i = 0 ; i< obj.length; i++){
+			str += '<tr>' 
+			str += '<td>'+ obj[i].stuId + "</td>";
+			str += '<td>'+ obj[i].stuName + "</td>";
+			str += '<td>'+ obj[i].stuPw + "</td>";
+			str += '</tr>';
+		} */
+		$.each(obj, function(i, data){
+			str += '<tr>'
+			str += '<td>'+ data.stuId + "</td>";
+			str += '<td>'+ data.stuName + "</td>";
+			str += '<td>'+ data.stuPw + "</td>";
+			str += '</tr>';
+		});
+		
+		
+		/*
+		for(var i = 0 ; i< arr.length; i++){
+			str += '<tr>'
+			str += '<td>'+ arr[i][0] + "</td>";
+			str += '<td>'+ arr[i][1] + "</td>";
+			str += '<td>'+ arr[i][2] + "</td>";
+			str += '</tr>';
+		}
+		
+		$.each(arr, function(i, data){
+			str += '<tr>'
+			str += '<td>'+ data[0] + "</td>";
+			str += '<td>'+ data[1] + "</td>";
+			str += '<td>'+ data[2] + "</td>";
+			str += '</tr>';
+		});*/
+		
+		
+		
+		$('#tbody').html(str);
+		
+		// prepend : tbody 안에 위쪽으로 붙인다 
+		// append :  tbody 안에 하단으로 붙인다 
+		// html   :  다 지우고 새롭게 붙인다. 
+	})
+	
+	
+	
+});
+</script>
+<style>
+table, td{border: 1px solid black; }
+</style>
+</head>
+<body>
+<button id="tBtn"> 데이터 가져오기 </button>
+<table>
+	<tr>
+		<td>아이디</td>
+		<td>이름</td>
+		<td>비밀번호</td>
+	</tr>
+	<tbody id='tbody'>
+	
+	
+	
+	<tr>
+		<td colspan = "3"> 데이터가 없습니다  </td>
+	</tr>
+	
+	
+	</tbody>
+</table>
+</body>
+</html>
