@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(function(){
+	$('#ajaxBtn').click(function(){
+		$.ajax({
+			url: 'https://apis.data.go.kr/1160100/service/GetStockSecuritiesInfoService/getStockPriceInfo?serviceKey=5yOr8%2FoR%2FU6nAz5ysFlKnUQ4wayzOogsGSLvrEmu3HET2C43zlryMCB0eAutsCw9wa0xeGjc6BAdQC1YO3LT1A%3D%3D&numOfRows=10&pageNo=1&resultType=json',
+		    dataType: 'json',
+		    success: function(data){
+		    	alert('성공');
+		    	console.log(data);
+		    	//console.log(data.response.body.items.item[0].basDt);
+		    	/*
+           		 basDt //기준일자 
+           	 	 itmsNm  // 종목
+           	 	 fltRt // 등락율
+           	     clpr // 종가 
+           	    */
+           	    let items = data.response.body.items.item;
+		    	console.log(items.length); // 아이템의 길이 출력 
+		    	let str = '';
+		    	for (let i = 0 ; i < items.length ; i++){
+		    		let basDt, 	itmsNm, fltRt, clpr;
+		    		basDt = items[i].basDt;
+		    		itmsNm = items[i].itmsNm;
+		    		fltRt = items[i].fltRt;
+		    		clpr = items[i].clpr;
+		    		str += '<tr>';
+		    		str += '<td>' + basDt + '</td>'
+		    		str += '<td>' + itmsNm + '</td>'
+		    		str += '<td>' + fltRt + '</td>'
+		    		str += '<td>' + clpr + '</td>'
+		    		str += '</tr>';
+		    		
+		    	}
+		    	$("#tbody").html(str)
+		    	
+		    	
+		    	
+		    	
+		    },
+		    error: function(){
+		    	alert('실패');
+		    	
+		    }
+		}); //ajax
+	}) // ajaxbtn
+})// jquery
+</script>
+<style>
+table, th, td { border: 1px solid black; border-collapse: collapse;}
+img{width:50px;}
+</style>
+</head>
+<body>
+<button id='ajaxBtn'>가져오기</button>
+<br>
+<table>
+<tr>
+	<th>기준일자</th>
+	<th>종목</th>
+	<th>등락율</th>
+	<th>종가</th>
+</tr>
+<tbody id='tbody'>
+</tbody>
+</table>
+</body>
+</html>

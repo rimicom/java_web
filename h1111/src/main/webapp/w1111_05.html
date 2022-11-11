@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+//   .toFixed(2) // 소수 둘째자리까지 
+
+$(function(){
+	$("#ajaxBtn").click(function(){
+		let xData = []; // x 축 학생이름 
+		let yData = []; // y 축 국어성적
+		$.ajax({
+			url: "./js/stuData.json",
+			dataType: "json",
+			success:function(data){
+				 alert('성공 : ' + data.length);
+				 $.each(data, function(i, item){
+					 xData.push(item.name);
+					 yData.push(item.kor);
+					 
+					 if (i == 5) return false; 
+				 }); // each
+				 
+				 console.log(xData);
+				 console.log(yData);
+				 
+				 const ctx = document.getElementById('myChart').getContext('2d');
+				 const myChart = new Chart(ctx, {
+				     type: 'line',
+				     data: {
+				         labels: xData, // x축
+				         datasets: [{
+				             label: '국어점수',
+				             data: yData,
+				             backgroundColor: [
+				                 'rgba(255, 99, 132, 0.2)',
+				                 'rgba(54, 162, 235, 0.2)',
+				                 'rgba(255, 206, 86, 0.2)',
+				                 'rgba(75, 192, 192, 0.2)',
+				                 'rgba(153, 102, 255, 0.2)',
+				                 'rgba(255, 159, 64, 0.2)'
+				             ],
+				             borderColor: [
+				                 'rgba(255, 99, 132, 1)',
+				                 'rgba(54, 162, 235, 1)',
+				                 'rgba(255, 206, 86, 1)',
+				                 'rgba(75, 192, 192, 1)',
+				                 'rgba(153, 102, 255, 1)',
+				                 'rgba(255, 159, 64, 1)'
+				             ],
+				             borderWidth: 1
+				         }]
+				     },
+				     options: {
+				         scales: {
+				             y: {
+				                 beginAtZero: true
+				             }
+				         }
+				     }
+				 }); // chartjs
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+                 
+			},
+			error:function(){
+				 alert('실패');
+			}
+			
+		}); // ajax
+		
+	}); // ajaxbtn
+        	
+}); // jquery
+
+
+
+
+
+</script>
+<style>
+table, th, td { border: 1px solid black; border-collapse: collapse;}
+</style>
+</head>
+<body>
+<button id='ajaxBtn'>학생성적 가져오기</button>
+<br>
+<canvas id="myChart" width="400" height="400"></canvas>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(function(){
+	$('#ajaxBtn').click(function(){
+		// ajax호출
+		
+		$.ajax({
+			url: "https://apis.data.go.kr/B551011/PhotoGalleryService/galleryList?serviceKey=5yOr8%2FoR%2FU6nAz5ysFlKnUQ4wayzOogsGSLvrEmu3HET2C43zlryMCB0eAutsCw9wa0xeGjc6BAdQC1YO3LT1A%3D%3D&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A",
+			dataType: "xml",
+			success: function(data){
+				// alert('성공');
+				console.log(data);
+				let str = '';
+				let dataXml = $(data).find('items');
+				let len = dataXml.find('item').length;
+				console.log('len: '+ len);
+				// galContentId, galCreatedtime, galPhotographer, galTitle, galWebImageUrl
+				for(let i = 0 ; i< len ; i ++){
+					let  galContentId, galCreatedtime, galPhotographer, galTitle, galWebImageUrl;
+					galContentId = dataXml.find("item").eq(i).find("galContentId").text();
+					galCreatedtime = dataXml.find("item").eq(i).find("galCreatedtime").text();
+					galPhotographer = dataXml.find("item").eq(i).find("galPhotographer").text();
+					galTitle = dataXml.find("item").eq(i).find("galTitle").text();
+					galWebImageUrl = dataXml.find("item").eq(i).find("galWebImageUrl").text();
+					
+					str += '<tr>';
+					str += '<td>'+ galContentId + '</td>';
+					str += '<td>'+ galCreatedtime + '</td>';
+					str += '<td>'+ galPhotographer + '</td>';
+					str += '<td>'+ galTitle + '</td>';
+					str += '<td>'+ ' <a href="'+galWebImageUrl+'" target="_blank">' + '<img src = " '+ galWebImageUrl +'">' + '</a></td>';
+					// <a href="주소" target="_blank"> <img src = "주소"> </a> 
+					// 이미지를 누르면 새로운 창에 이미지가 뜨게 만들어주세요 
+					str += '<tr>';
+				}
+	     		$("#tbody").html(str)
+				
+				
+				
+				
+				
+				
+			},
+			error: function(){
+				alert('실패');
+			}
+			
+		}) // ajax
+		
+		
+		
+	});//ajaxbtn
+	
+});//jquery
+
+</script>
+<style>
+table, th, td { border: 1px solid black; border-collapse: collapse;}
+img{width:50px;}
+</style>
+
+</head>
+<body>
+
+<button id='ajaxBtn'>가져오기</button>
+<br>
+<table>
+<tr>
+	<th>번호</th>
+	<th>촬영일자</th>
+	<th>촬영자</th>
+	<th>제목</th>
+	<th>링크</th>
+</tr>
+<tbody id='tbody'>
+</tbody>
+</table>
+
+
+
+</body>
+</html>
